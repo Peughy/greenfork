@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenfork/src/constants/app_size.dart';
 
 class AppStyle {
   final double fontSize;
@@ -26,5 +28,16 @@ class AppStyle {
     fontWeight: fontWeight,
     color: color,
     letterSpacing: letterSpacing,
+  );
+}
+
+class CustomBorderStyle {
+  final Color color;
+
+  const CustomBorderStyle({required this.color});
+
+  InputBorder borderStyle() => OutlineInputBorder(
+    borderRadius: BorderRadius.circular(AppSize.radius),
+    borderSide: BorderSide(width: AppSize.borderWidth, color: color),
   );
 }
